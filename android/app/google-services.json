@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "641534324849",
+    "project_id": "green-camera-4aeb9",
+    "storage_bucket": "green-camera-4aeb9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:641534324849:android:23ef91abd0fcba48966bd0",
+        "android_client_info": {
+          "package_name": "com.chau.camera"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "641534324849-vfp3dd3noi1n2c7le2ubvchp2189r0qh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.chau.camera",
+            "certificate_hash": "33f84438d823c552979194fa909794011c9656c6"
+          }
+        },
+        {
+          "client_id": "641534324849-bjmhef8q6ec3op4vi2p1bv2seme0v52c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDUiIu-g9ReU62vKOTM3bLeabUIIHKxoxQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "641534324849-bjmhef8q6ec3op4vi2p1bv2seme0v52c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
