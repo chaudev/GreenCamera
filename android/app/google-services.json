@@ -1,41 +1,70 @@
 {
   "project_info": {
-    "project_number": "641534324849",
-    "project_id": "green-camera-4aeb9",
-    "storage_bucket": "green-camera-4aeb9.appspot.com"
+    "project_number": "754863071349",
+    "project_id": "green-camera-80bd8",
+    "storage_bucket": "green-camera-80bd8.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:641534324849:android:23ef91abd0fcba48966bd0",
+        "mobilesdk_app_id": "1:754863071349:android:c95594149425385bedd83c",
         "android_client_info": {
           "package_name": "com.chau.camera"
         }
       },
       "oauth_client": [
         {
-          "client_id": "641534324849-vfp3dd3noi1n2c7le2ubvchp2189r0qh.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.chau.camera",
-            "certificate_hash": "33f84438d823c552979194fa909794011c9656c6"
-          }
-        },
-        {
-          "client_id": "641534324849-bjmhef8q6ec3op4vi2p1bv2seme0v52c.apps.googleusercontent.com",
+          "client_id": "754863071349-kklkhq4mqb6jokkfmo888dg6tjhgmk7d.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDUiIu-g9ReU62vKOTM3bLeabUIIHKxoxQ"
+          "current_key": "AIzaSyDrtYwYIUpgcyer49e8QLKSMGmZRaJUYIQ"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "641534324849-bjmhef8q6ec3op4vi2p1bv2seme0v52c.apps.googleusercontent.com",
+              "client_id": "754863071349-kklkhq4mqb6jokkfmo888dg6tjhgmk7d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:754863071349:android:7bb3b1f97a36cae1edd83c",
+        "android_client_info": {
+          "package_name": "com.chau.camera2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "754863071349-tn1hspo4pohdthurn2iosgiiesh225fu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.chau.camera2",
+            "certificate_hash": "33f84438d823c552979194fa909794011c9656c6"
+          }
+        },
+        {
+          "client_id": "754863071349-kklkhq4mqb6jokkfmo888dg6tjhgmk7d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDrtYwYIUpgcyer49e8QLKSMGmZRaJUYIQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "754863071349-kklkhq4mqb6jokkfmo888dg6tjhgmk7d.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
