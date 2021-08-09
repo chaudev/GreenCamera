@@ -14,7 +14,7 @@
     "react": "17.0.1",
     "react-native": "0.64.2",
     "react-native-camera": "git+https://git@github.com/react-native-community/react-native-camera.git",
-    "react-native-fetch-blob": "^0.10.8",
+    "react-native-fs": "^2.18.0",
     "react-native-permissions": "^3.0.5",
     "react-native-vector-icons": "^8.1.0"
   },

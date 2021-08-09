@@ -92,6 +92,7 @@ dependencies {
     
     // From node_modules
     implementation project(':react-native-camera')
+    implementation project(':react-native-fs')
 
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.0.0"
 

@@ -14,6 +14,8 @@ target 'GreenCamera' do
 
   pod 'react-native-camera', :path => '../node_modules/react-native-camera'
 
+  pod 'RNFS', :path => '../node_modules/react-native-fs'
+
   target 'GreenCameraTests' do
     inherit! :complete
     # Pods for testing

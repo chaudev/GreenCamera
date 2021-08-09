@@ -6,14 +6,14 @@ import {
   StatusBar,
   StyleSheet,
   Text,
-  useColorScheme,
   TouchableOpacity,
   View,
   Image,
 } from 'react-native';
 import {ButtonIcon, Colors, GreenStyles, Icon} from 'green-native';
 import {RNCamera} from 'react-native-camera';
-import RNFetchBlob from 'react-native-fetch-blob';
+
+var RNFS = require('react-native-fs');
 
 LogBox.ignoreAllLogs();
 
@@ -24,7 +24,7 @@ export const GreenCamera = () => {
   const [front, setFront] = useState(false);
   const [zoom, setZoom] = useState(0);
   const [focus, setFocus] = useState({x: undefined, y: undefined});
-  const [imageType, setImageType] = useState(0);
+  const [imageType, setImageType] = useState('jpg');
 
   const takePicture = async () => {
     if (cameraRef) {
@@ -90,20 +90,29 @@ export const GreenCamera = () => {
   };
 
   const saveFile = url => {
-    RNFetchblob.config({
-      fileCache: true,
-    })
-      .fetch('GET', url)
-      .then(res => {
-        // remove cached file from storage
-        console.log(res);
-        // res.flush();
-      });
+    var timeStampInMs =
+      window.performance &&
+      window.performance.now &&
+      window.performance.timing &&
+      window.performance.timing.navigationStart
+        ? window.performance.now() + window.performance.timing.navigationStart
+        : Date.now();
 
-    // remove file by specifying a path
-    RNFetchBlob.fs.unlink('some-file-path').then(() => {
-      // ...
-    });
+    let path =
+      RNFS.ExternalStorageDirectoryPath +
+      '/DCIM/Camera/green-camera-' +
+      timeStampInMs +
+      '.' +
+      imageType;
+
+    RNFS.copyFile(url, path)
+      .then(res => {
+        console.log('success');
+      })
+      .catch(err => {
+        console.log('ERROR: image file write failed!!!');
+        console.log(err.message, err.code);
+      });
   };
 
   const [temp, setTemp] = useState('');
@@ -132,7 +141,7 @@ export const GreenCamera = () => {
           <TouchableOpacity
             activeOpacity={0.5}
             onPress={() => {
-              setImageType(imageType == 0 ? 1 : 0);
+              setImageType(imageType == 'jpg' ? 'png' : 'jpg');
             }}>
             <Text
               style={{
@@ -140,7 +149,7 @@ export const GreenCamera = () => {
                 fontWeight: 'bold',
                 fontSize: 16,
               }}>
-              {imageType == 0 ? 'JPG' : 'PNG'}
+              {imageType == 'jpg' ? 'JPG' : 'PNG'}
             </Text>
           </TouchableOpacity>
         </View>
