@@ -13,6 +13,7 @@ import {
 import {ButtonIcon, Colors, GreenStyles, Icon} from 'green-native';
 import {RNCamera} from 'react-native-camera';
 import Slider from '@react-native-community/slider';
+import {GirdCamera} from './gird';
 
 var RNFS = require('react-native-fs');
 
@@ -26,6 +27,7 @@ export const GreenCamera = () => {
   const [zoom, setZoom] = useState(0);
   const [focus, setFocus] = useState({x: undefined, y: undefined});
   const [imageType, setImageType] = useState('jpg');
+  const [gird, setGird] = useState(false);
 
   const takePicture = async () => {
     if (cameraRef) {
@@ -128,7 +130,7 @@ export const GreenCamera = () => {
           flexDirection: 'row',
           alignItems: 'center',
         }}>
-        <View style={{paddingHorizontal: 15}}>
+        <View style={{paddingHorizontal: 15, flex: 1}}>
           <ButtonIcon
             iconName={flash ? 'flash' : 'flash-off'}
             iconColor=""
@@ -138,7 +140,7 @@ export const GreenCamera = () => {
             }}
           />
         </View>
-        <View style={{paddingHorizontal: 15}}>
+        <View style={{paddingHorizontal: 15, flex: 1}}>
           <TouchableOpacity
             activeOpacity={0.5}
             onPress={() => {
@@ -153,6 +155,16 @@ export const GreenCamera = () => {
               {imageType == 'jpg' ? 'JPG' : 'PNG'}
             </Text>
           </TouchableOpacity>
+        </View>
+        <View style={{paddingHorizontal: 15}}>
+          <ButtonIcon
+            iconName={gird ? 'grid' : 'grid-outline'}
+            iconColor=""
+            iconSize={22}
+            onPress={() => {
+              setGird(!gird);
+            }}
+          />
         </View>
       </View>
 
@@ -186,8 +198,9 @@ export const GreenCamera = () => {
           message: 'Chúng tôi cần quyền truy cập micro để ghi âm trong video',
           buttonPositive: 'Đồng ý',
           buttonNegative: 'Đéo cho',
-        }}
-      />
+        }}>
+        {gird && <GirdCamera />}
+      </RNCamera>
 
       {!showSettings ? (
         <View
