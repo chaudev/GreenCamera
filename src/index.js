@@ -12,6 +12,7 @@ import {
 } from 'react-native';
 import {ButtonIcon, Colors, GreenStyles, Icon} from 'green-native';
 import {RNCamera} from 'react-native-camera';
+import Slider from '@react-native-community/slider';
 
 var RNFS = require('react-native-fs');
 
@@ -224,9 +225,7 @@ export const GreenCamera = () => {
             alignItems: 'center',
             justifyContent: 'center',
           }}>
-          <View style={{flex: 1}}></View>
-          <View
-            style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+          <View style={{flex: 1}}>
             <TouchableOpacity
               onLongPress={() => {
                 setZoom(0);
@@ -236,19 +235,35 @@ export const GreenCamera = () => {
               }}
               style={[
                 {
-                  flex: 1,
-                  borderWidth: 1,
-                  height: 30,
-                  width: 30,
+                  borderWidth: 0,
+                  marginLeft: 10,
                   borderColor: '#fff',
                   borderRadius: 900,
                 },
                 GreenStyles.Center,
               ]}>
-              <Text style={{color: Colors.white, fontSize: 10}}>
-                {getZoom()}
+              <Text style={{color: Colors.primaryColor, fontSize: 12}}>
+                {zoom.toFixed(2) + 'x'}
               </Text>
             </TouchableOpacity>
+          </View>
+          <View
+            style={{flex: 4, alignItems: 'center', justifyContent: 'center'}}>
+            <Slider
+              minimumValue={0}
+              step={0.05}
+              maximumValue={1}
+              minimumTrackTintColor={Colors.primaryColor}
+              thumbTintColor={Colors.primaryColor}
+              maximumTrackTintColor={Colors.white}
+              onValueChange={value => {
+                setZoom(value);
+              }}
+              value={zoom}
+              style={{
+                width: '100%',
+              }}
+            />
           </View>
           <View style={{flex: 1, alignItems: 'flex-end'}}>
             <TouchableOpacity
